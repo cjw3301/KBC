@@ -27,10 +27,97 @@
 			.p {
 				width: 100%;
 			}
+			 /*CSS导航菜单基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* 导航菜单容器 */
+        .navbar {
+            background-color: #333;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* 一级菜单样式 */
+        .nav-list {
+            list-style-type: none;
+            display: flex;
+        }
+        
+        .nav-list > li {
+            position: relative;
+        }
+        
+        .nav-list a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        /* 悬停效果 */
+        .nav-list a:hover {
+            background-color: #555;
+        }
+        
+        /* 二级下拉菜单 */
+        .dropdown {
+            position: absolute;
+            display: none;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown li {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .dropdown a {
+            color: black;
+            padding: 12px 16px;
+            text-align: left;
+        }
+        
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+        
+        /* 显示下拉菜单 */
+        .nav-list li:hover .dropdown {
+            display: block;
+        }
 		</style>
 	</head>
 	<body>
 		<div class="container">
+			<nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="#">首页</a></li>
+            <li>
+                <a href="#">产品</a>
+                <ul class="dropdown">
+                    <li><a href="#">产品一</a></li>
+                    <li><a href="#">产品二</a></li>
+                    <li><a href="#">产品三</a></li>
+                </ul>
+            </li>
+            <li><a href="#">关于我们</a></li>
+            <li>
+                <a href="#">服务</a>
+                <ul class="dropdown">
+                    <li><a href="#">服务一</a></li>
+                    <li><a href="#">服务二</a></li>
+                </ul>
+            </li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </nav>
 			<h1 style="font-size:30px;">Kain Capital | 凯银资本</h1>
 			<p style="color:red;font-size:42px;">专注并购</p>
 			<p style="color:red;font-size:42px;">HongKong</p>
